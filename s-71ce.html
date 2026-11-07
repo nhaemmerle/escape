@@ -1,0 +1,12 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Escape</title>
+<style>*{box-sizing:border-box}body{margin:0;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;padding:20px;background:#12151c;color:#e8e6e0;font-family:ui-monospace,Menlo,monospace;text-align:center;overflow-x:hidden}
+h1{font-size:1.3rem;margin:0}p{margin:0;opacity:.8}button,input{font:inherit;font-size:1.2rem;padding:14px 22px;border-radius:10px;border:2px solid #d9a441;background:#1d222d;color:#e8e6e0}
+button{background:#d9a441;color:#12151c;font-weight:700}input{width:9em;text-align:center;letter-spacing:.4em}
+.bar{width:100%;max-width:320px;height:18px;border:2px solid #d9a441;border-radius:9px;overflow:hidden}.bar i{display:block;height:100%;width:0;background:#d9a441}
+.grid{display:grid;grid-template-columns:repeat(3,84px);gap:8px}.grid div{font-size:2.4rem;height:84px;display:flex;align-items:center;justify-content:center;background:#1d222d;border:2px solid #333;border-radius:10px}.grid .on{border-color:#d9a441;background:#3a3020}
+.shake{animation:s .3s}@keyframes s{25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}</style></head><body><h1>🤖 Tür 4</h1><p>Beweise, dass du kein Roboter bist:<br>Tippe alle <b>Escape-Room-Gegenstände</b> an (Schlüssel, Schloss, Lupe).</p>
+<div class="grid" id="g"></div><button onclick="chk()">Bestätigen</button><p id="m"></p><script>var items=["🔑","🍌","🔒","🐟","🔍","🧦","🍕","🔑","🎈"],ok=[0,2,4,7];
+items.forEach(function(e,i){var d=document.createElement("div");d.textContent=e;d.onclick=function(){d.classList.toggle("on")};g.appendChild(d)});
+function chk(){var s=[].map.call(g.children,function(d,i){return d.classList.contains("on")?i:-1}).filter(function(x){return x>=0});
+if(s.join()==ok.join())location.href="s-e05b.html";else{m.textContent="Sehr verdächtig. Nochmal.";g.classList.add("shake");setTimeout(function(){g.classList.remove("shake")},300)}}</script></body></html>
